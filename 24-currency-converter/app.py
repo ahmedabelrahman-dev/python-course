@@ -43,7 +43,7 @@ def main():
             f"Rate: 1 {from_currency} = {rates[to_currency]/rates[from_currency]:.4f} {to_currency}")
 
         if not input("\n Convert again? (y/n): ").lower().startswith("y"):
-            print("👋 Thanks for playing!")
+            print("👋 Thanks for using the converter !")
             break
 
 
