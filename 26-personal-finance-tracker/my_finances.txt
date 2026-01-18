@@ -1,0 +1,3 @@
+2025-04-03|-200|rent|dsakdnka
+2025-04-03|+5000|Salary|my salary as a programmer
+2026-01-18|-20|headphone|nothing
