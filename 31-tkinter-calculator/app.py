@@ -13,10 +13,49 @@ def calculate_sum():
         result_label.config(text="Please enter valid numbers!")
 
 
+def calculate_subtract():
+    try:
+        num1 = float(first_number.get())
+        num2 = float(second_number.get())
+
+        result = num1 - num2
+
+        result_label.config(text=f"Result: {result}")
+    except ValueError:
+        result_label.config(text="Please enter valid numbers!")
+
+
+def calculate_multiply():
+    try:
+        num1 = float(first_number.get())
+        num2 = float(second_number.get())
+
+        result = num1 * num2
+
+        result_label.config(text=f"Result: {result}")
+    except ValueError:
+        result_label.config(text="Please enter valid numbers!")
+
+
+def calculate_divide():
+    try:
+        num1 = float(first_number.get())
+        num2 = float(second_number.get())
+        if num2 == 0:
+            result_label.config(text="Cannot divide by zero!")
+            return
+
+        result = num1 / num2
+
+        result_label.config(text=f"Result: {result}")
+    except ValueError:
+        result_label.config(text="Please enter valid numbers!")
+
+
 # create the main window
 window = tk.Tk()
 window.title("Simple Calculator")
-window.geometry("300x250")
+window.geometry("400x500")
 
 title_label = tk.Label(window, text="Simple Calculator", font=("Arial", 16))
 title_label.pack(pady=10)
@@ -42,6 +81,18 @@ second_number.pack()
 
 calculate_button = tk.Button(window, text="Add Numbers", command=calculate_sum)
 calculate_button.pack(pady=10)
+
+subtract_button = tk.Button(
+    window, text="Subtract Numbers", command=calculate_subtract)
+subtract_button.pack(pady=5)
+
+multiply_button = tk.Button(
+    window, text="Multiply Numbers", command=calculate_multiply)
+multiply_button.pack(pady=5)
+
+divide_button = tk.Button(
+    window, text="Divide Numbers", command=calculate_divide)
+divide_button.pack(pady=5)
 
 result_label = tk.Label(window, text="Result: ", font=("Arial", 12))
 result_label.pack(pady=10)
